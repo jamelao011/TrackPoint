@@ -27,13 +27,6 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnuProdutos = new javax.swing.JMenu();
-        itmCadastrarProduto = new javax.swing.JMenuItem();
-        itmAlterarProduto = new javax.swing.JMenuItem();
-        itmBuscarProduto = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        itmExcluirProduto = new javax.swing.JMenuItem();
-        itmListarProduto = new javax.swing.JMenuItem();
         mnuProdutos2 = new javax.swing.JMenu();
         itmCadastrarCliente = new javax.swing.JMenuItem();
         itmAlterarCliente = new javax.swing.JMenuItem();
@@ -42,66 +35,21 @@ public class Menu extends javax.swing.JFrame {
         itmExcluirCliente = new javax.swing.JMenuItem();
         itmListarCliente = new javax.swing.JMenuItem();
         mnuProdutos1 = new javax.swing.JMenu();
-        itmAlterar1 = new javax.swing.JMenuItem();
-        itmBuscar1 = new javax.swing.JMenuItem();
+        itmAlterarPedido = new javax.swing.JMenuItem();
+        itmBuscarPedido = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        itmExcluir1 = new javax.swing.JMenuItem();
-        itmListar1 = new javax.swing.JMenuItem();
+        itmExcluirPedido = new javax.swing.JMenuItem();
+        itmListarPedido = new javax.swing.JMenuItem();
         mnuProdutos3 = new javax.swing.JMenu();
-        itmAlterar3 = new javax.swing.JMenuItem();
-        itmBuscar3 = new javax.swing.JMenuItem();
+        itmAlterarRastrear = new javax.swing.JMenuItem();
+        itmBuscarRastrear = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
-        itmExcluir3 = new javax.swing.JMenuItem();
-        itmListar3 = new javax.swing.JMenuItem();
+        itmExcluirRastrear = new javax.swing.JMenuItem();
+        itmListarRastrear = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu");
         getContentPane().setLayout(null);
-
-        mnuProdutos.setText("Estoque");
-
-        itmCadastrarProduto.setText("Cadastrar");
-        itmCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmCadastrarProdutoActionPerformed(evt);
-            }
-        });
-        mnuProdutos.add(itmCadastrarProduto);
-
-        itmAlterarProduto.setText("Alterar");
-        itmAlterarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmAlterarProdutoActionPerformed(evt);
-            }
-        });
-        mnuProdutos.add(itmAlterarProduto);
-
-        itmBuscarProduto.setText("Buscar");
-        itmBuscarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmBuscarProdutoActionPerformed(evt);
-            }
-        });
-        mnuProdutos.add(itmBuscarProduto);
-        mnuProdutos.add(jSeparator1);
-
-        itmExcluirProduto.setText("Excluir");
-        itmExcluirProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmExcluirProdutoActionPerformed(evt);
-            }
-        });
-        mnuProdutos.add(itmExcluirProduto);
-
-        itmListarProduto.setText("Listar");
-        itmListarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmListarProdutoActionPerformed(evt);
-            }
-        });
-        mnuProdutos.add(itmListarProduto);
-
-        jMenuBar1.add(mnuProdutos);
 
         mnuProdutos2.setText("Clientes");
 
@@ -150,75 +98,75 @@ public class Menu extends javax.swing.JFrame {
 
         mnuProdutos1.setText("Pedidos");
 
-        itmAlterar1.setText("Alterar");
-        itmAlterar1.addActionListener(new java.awt.event.ActionListener() {
+        itmAlterarPedido.setText("Alterar");
+        itmAlterarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmAlterar1ActionPerformed(evt);
+                itmAlterarPedidoActionPerformed(evt);
             }
         });
-        mnuProdutos1.add(itmAlterar1);
+        mnuProdutos1.add(itmAlterarPedido);
 
-        itmBuscar1.setText("Buscar");
-        itmBuscar1.addActionListener(new java.awt.event.ActionListener() {
+        itmBuscarPedido.setText("Buscar");
+        itmBuscarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmBuscar1ActionPerformed(evt);
+                itmBuscarPedidoActionPerformed(evt);
             }
         });
-        mnuProdutos1.add(itmBuscar1);
+        mnuProdutos1.add(itmBuscarPedido);
         mnuProdutos1.add(jSeparator2);
 
-        itmExcluir1.setText("Excluir");
-        itmExcluir1.addActionListener(new java.awt.event.ActionListener() {
+        itmExcluirPedido.setText("Excluir");
+        itmExcluirPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmExcluir1ActionPerformed(evt);
+                itmExcluirPedidoActionPerformed(evt);
             }
         });
-        mnuProdutos1.add(itmExcluir1);
+        mnuProdutos1.add(itmExcluirPedido);
 
-        itmListar1.setText("Listar");
-        itmListar1.addActionListener(new java.awt.event.ActionListener() {
+        itmListarPedido.setText("Listar");
+        itmListarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmListar1ActionPerformed(evt);
+                itmListarPedidoActionPerformed(evt);
             }
         });
-        mnuProdutos1.add(itmListar1);
+        mnuProdutos1.add(itmListarPedido);
 
         jMenuBar1.add(mnuProdutos1);
 
         mnuProdutos3.setText("Rastrear");
 
-        itmAlterar3.setText("Alterar");
-        itmAlterar3.addActionListener(new java.awt.event.ActionListener() {
+        itmAlterarRastrear.setText("Alterar");
+        itmAlterarRastrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmAlterar3ActionPerformed(evt);
+                itmAlterarRastrearActionPerformed(evt);
             }
         });
-        mnuProdutos3.add(itmAlterar3);
+        mnuProdutos3.add(itmAlterarRastrear);
 
-        itmBuscar3.setText("Buscar");
-        itmBuscar3.addActionListener(new java.awt.event.ActionListener() {
+        itmBuscarRastrear.setText("Buscar");
+        itmBuscarRastrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmBuscar3ActionPerformed(evt);
+                itmBuscarRastrearActionPerformed(evt);
             }
         });
-        mnuProdutos3.add(itmBuscar3);
+        mnuProdutos3.add(itmBuscarRastrear);
         mnuProdutos3.add(jSeparator4);
 
-        itmExcluir3.setText("Excluir");
-        itmExcluir3.addActionListener(new java.awt.event.ActionListener() {
+        itmExcluirRastrear.setText("Excluir");
+        itmExcluirRastrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmExcluir3ActionPerformed(evt);
+                itmExcluirRastrearActionPerformed(evt);
             }
         });
-        mnuProdutos3.add(itmExcluir3);
+        mnuProdutos3.add(itmExcluirRastrear);
 
-        itmListar3.setText("Listar");
-        itmListar3.addActionListener(new java.awt.event.ActionListener() {
+        itmListarRastrear.setText("Listar");
+        itmListarRastrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmListar3ActionPerformed(evt);
+                itmListarRastrearActionPerformed(evt);
             }
         });
-        mnuProdutos3.add(itmListar3);
+        mnuProdutos3.add(itmListarRastrear);
 
         jMenuBar1.add(mnuProdutos3);
 
@@ -227,26 +175,6 @@ public class Menu extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(720, 402));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void itmCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCadastrarProdutoActionPerformed
-        new CadastrarProduto().setVisible(true);
-    }//GEN-LAST:event_itmCadastrarProdutoActionPerformed
-
-    private void itmAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarProdutoActionPerformed
-        new AlterarProduto().setVisible(true);
-    }//GEN-LAST:event_itmAlterarProdutoActionPerformed
-
-    private void itmBuscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarProdutoActionPerformed
-        new BuscarProduto().setVisible(true);
-    }//GEN-LAST:event_itmBuscarProdutoActionPerformed
-
-    private void itmListarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarProdutoActionPerformed
-        new ListarProduto().setVisible(true);
-    }//GEN-LAST:event_itmListarProdutoActionPerformed
-
-    private void itmExcluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmExcluirProdutoActionPerformed
-        new ExcluirProduto().setVisible(true);
-    }//GEN-LAST:event_itmExcluirProdutoActionPerformed
 
     private void itmCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCadastrarClienteActionPerformed
         new CadastrarCliente().setVisible(true);
@@ -268,37 +196,37 @@ public class Menu extends javax.swing.JFrame {
         new ListarCliente().setVisible(true);
     }//GEN-LAST:event_itmListarClienteActionPerformed
 
-    private void itmAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmAlterar1ActionPerformed
+    private void itmAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarPedidoActionPerformed
+       new AlterarPedido().setVisible(true);
+    }//GEN-LAST:event_itmAlterarPedidoActionPerformed
 
-    private void itmBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmBuscar1ActionPerformed
+    private void itmBuscarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarPedidoActionPerformed
+        new BuscarPedido().setVisible(true);
+    }//GEN-LAST:event_itmBuscarPedidoActionPerformed
 
-    private void itmExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmExcluir1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmExcluir1ActionPerformed
+    private void itmExcluirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmExcluirPedidoActionPerformed
+        new ExcluirPedido().setVisible(true);
+    }//GEN-LAST:event_itmExcluirPedidoActionPerformed
 
-    private void itmListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmListar1ActionPerformed
+    private void itmListarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarPedidoActionPerformed
+        new ListarPedido().setVisible(true);
+    }//GEN-LAST:event_itmListarPedidoActionPerformed
 
-    private void itmAlterar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmAlterar3ActionPerformed
+    private void itmAlterarRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarRastrearActionPerformed
+        new AlterarRastrear().setVisible(true);
+    }//GEN-LAST:event_itmAlterarRastrearActionPerformed
 
-    private void itmBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmBuscar3ActionPerformed
+    private void itmBuscarRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarRastrearActionPerformed
+        new BuscarRastrear().setVisible(true);
+    }//GEN-LAST:event_itmBuscarRastrearActionPerformed
 
-    private void itmExcluir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmExcluir3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmExcluir3ActionPerformed
+    private void itmExcluirRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmExcluirRastrearActionPerformed
+        new ExcluirRastrear().setVisible(true);
+    }//GEN-LAST:event_itmExcluirRastrearActionPerformed
 
-    private void itmListar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmListar3ActionPerformed
+    private void itmListarRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarRastrearActionPerformed
+        new ListarRastrear().setVisible(true);
+    }//GEN-LAST:event_itmListarRastrearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,30 +265,23 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem itmAlterar1;
-    private javax.swing.JMenuItem itmAlterar3;
     private javax.swing.JMenuItem itmAlterarCliente;
-    private javax.swing.JMenuItem itmAlterarProduto;
-    private javax.swing.JMenuItem itmBuscar1;
-    private javax.swing.JMenuItem itmBuscar3;
+    private javax.swing.JMenuItem itmAlterarPedido;
+    private javax.swing.JMenuItem itmAlterarRastrear;
     private javax.swing.JMenuItem itmBuscarCliente;
-    private javax.swing.JMenuItem itmBuscarProduto;
+    private javax.swing.JMenuItem itmBuscarPedido;
+    private javax.swing.JMenuItem itmBuscarRastrear;
     private javax.swing.JMenuItem itmCadastrarCliente;
-    private javax.swing.JMenuItem itmCadastrarProduto;
-    private javax.swing.JMenuItem itmExcluir1;
-    private javax.swing.JMenuItem itmExcluir3;
     private javax.swing.JMenuItem itmExcluirCliente;
-    private javax.swing.JMenuItem itmExcluirProduto;
-    private javax.swing.JMenuItem itmListar1;
-    private javax.swing.JMenuItem itmListar3;
+    private javax.swing.JMenuItem itmExcluirPedido;
+    private javax.swing.JMenuItem itmExcluirRastrear;
     private javax.swing.JMenuItem itmListarCliente;
-    private javax.swing.JMenuItem itmListarProduto;
+    private javax.swing.JMenuItem itmListarPedido;
+    private javax.swing.JMenuItem itmListarRastrear;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JMenu mnuProdutos;
     private javax.swing.JMenu mnuProdutos1;
     private javax.swing.JMenu mnuProdutos2;
     private javax.swing.JMenu mnuProdutos3;
