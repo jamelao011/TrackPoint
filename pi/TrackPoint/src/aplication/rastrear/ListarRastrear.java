@@ -64,6 +64,7 @@ public class ListarRastrear extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         tblListar.setBackground(new java.awt.Color(174, 209, 0));
+        tblListar.setForeground(new java.awt.Color(255, 255, 255));
         tblListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

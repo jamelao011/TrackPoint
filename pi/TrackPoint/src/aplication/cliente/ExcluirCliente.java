@@ -47,6 +47,7 @@ public class ExcluirCliente extends javax.swing.JFrame {
         jLabel1.setBounds(110, 60, 80, 16);
 
         txtCPF.setBackground(new java.awt.Color(0, 36, 20));
+        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtCPF);
         txtCPF.setBounds(144, 60, 110, 30);
 

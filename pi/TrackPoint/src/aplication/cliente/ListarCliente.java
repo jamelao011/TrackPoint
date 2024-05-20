@@ -65,6 +65,7 @@ public class ListarCliente extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         tblListarCliente.setBackground(new java.awt.Color(174, 209, 0));
+        tblListarCliente.setForeground(new java.awt.Color(255, 255, 255));
         tblListarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

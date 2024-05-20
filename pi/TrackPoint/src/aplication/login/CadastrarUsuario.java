@@ -53,6 +53,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         lblSenha.setBounds(50, 130, 70, 30);
 
         txtUsername.setBackground(new java.awt.Color(0, 36, 20));
+        txtUsername.setForeground(new java.awt.Color(255, 255, 255));
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
@@ -62,6 +63,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         txtUsername.setBounds(110, 70, 160, 30);
 
         txtSenha.setBackground(new java.awt.Color(0, 36, 20));
+        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtSenha);
         txtSenha.setBounds(110, 130, 160, 30);
 

@@ -47,6 +47,7 @@ public class ExcluirPedido extends javax.swing.JFrame {
         jLabel1.setBounds(84, 103, 94, 16);
 
         txtIdPedido.setBackground(new java.awt.Color(0, 36, 20));
+        txtIdPedido.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtIdPedido);
         txtIdPedido.setBounds(184, 95, 135, 32);
 
@@ -121,8 +122,6 @@ public class ExcluirPedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnExcluir1;
     private javax.swing.JButton btnExcluir2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

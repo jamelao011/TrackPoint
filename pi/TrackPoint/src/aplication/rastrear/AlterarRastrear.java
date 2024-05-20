@@ -46,6 +46,7 @@ public class AlterarRastrear extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         txtIdRastreio.setBackground(new java.awt.Color(0, 36, 20));
+        txtIdRastreio.setForeground(new java.awt.Color(255, 255, 255));
         txtIdRastreio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdRastreioActionPerformed(evt);
@@ -70,6 +71,7 @@ public class AlterarRastrear extends javax.swing.JFrame {
         btnAlterar.setBounds(240, 230, 110, 40);
 
         txtLocal.setBackground(new java.awt.Color(0, 36, 20));
+        txtLocal.setForeground(new java.awt.Color(255, 255, 255));
         txtLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocalActionPerformed(evt);
@@ -84,6 +86,7 @@ public class AlterarRastrear extends javax.swing.JFrame {
         jLabel3.setBounds(160, 130, 60, 16);
 
         txtStatus.setBackground(new java.awt.Color(0, 36, 20));
+        txtStatus.setForeground(new java.awt.Color(255, 255, 255));
         txtStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStatusActionPerformed(evt);

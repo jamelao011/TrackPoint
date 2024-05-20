@@ -46,6 +46,7 @@ public class ExcluirRastrear extends javax.swing.JFrame {
         jLabel1.setBounds(120, 80, 55, 16);
 
         txtIdRastreio.setBackground(new java.awt.Color(0, 36, 20));
+        txtIdRastreio.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtIdRastreio);
         txtIdRastreio.setBounds(190, 80, 120, 30);
 

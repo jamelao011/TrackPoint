@@ -67,6 +67,7 @@ public class BuscarPedido extends javax.swing.JFrame {
         jScrollPane1.setBounds(0, 70, 880, 590);
 
         txtIdPedido.setBackground(new java.awt.Color(0, 36, 20));
+        txtIdPedido.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtIdPedido);
         txtIdPedido.setBounds(310, 20, 90, 30);
 

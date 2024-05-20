@@ -47,6 +47,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         txtCEP.setBackground(new java.awt.Color(0, 36, 20));
+        txtCEP.setForeground(new java.awt.Color(255, 255, 255));
         txtCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCEPActionPerformed(evt);
@@ -71,6 +72,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         btnAlterar.setBounds(160, 200, 100, 30);
 
         txtCPF.setBackground(new java.awt.Color(0, 36, 20));
+        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
         txtCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCPFActionPerformed(evt);
@@ -80,6 +82,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         txtCPF.setBounds(160, 60, 150, 30);
 
         txtNome.setBackground(new java.awt.Color(0, 36, 20));
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);

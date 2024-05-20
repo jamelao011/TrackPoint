@@ -46,6 +46,7 @@ public class AlterarPedido extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         txtIdPedido.setBackground(new java.awt.Color(0, 36, 20));
+        txtIdPedido.setForeground(new java.awt.Color(255, 255, 255));
         txtIdPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdPedidoActionPerformed(evt);
@@ -70,6 +71,7 @@ public class AlterarPedido extends javax.swing.JFrame {
         btnAlterar.setBounds(210, 230, 110, 40);
 
         txtLogradouro.setBackground(new java.awt.Color(0, 36, 20));
+        txtLogradouro.setForeground(new java.awt.Color(255, 255, 255));
         txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLogradouroActionPerformed(evt);

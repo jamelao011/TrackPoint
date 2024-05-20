@@ -44,6 +44,7 @@ public class BuscarCliente extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         tblListar.setBackground(new java.awt.Color(174, 209, 0));
+        tblListar.setForeground(new java.awt.Color(255, 255, 255));
         tblListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -66,6 +67,7 @@ public class BuscarCliente extends javax.swing.JFrame {
         jScrollPane1.setBounds(0, 70, 860, 590);
 
         txtCPF.setBackground(new java.awt.Color(0, 36, 20));
+        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtCPF);
         txtCPF.setBounds(310, 20, 90, 30);
 

@@ -62,19 +62,22 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jLabel3.setBounds(120, 168, 60, 16);
 
         txtCEP.setBackground(new java.awt.Color(0, 36, 20));
+        txtCEP.setForeground(new java.awt.Color(255, 255, 255));
         txtCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCEPActionPerformed(evt);
             }
         });
         getContentPane().add(txtCEP);
-        txtCEP.setBounds(188, 161, 122, 30);
+        txtCEP.setBounds(190, 170, 122, 30);
 
         txtNome.setBackground(new java.awt.Color(0, 36, 20));
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtNome);
-        txtNome.setBounds(188, 127, 122, 22);
+        txtNome.setBounds(188, 127, 122, 30);
 
         txtCPF.setBackground(new java.awt.Color(0, 36, 20));
+        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtCPF);
         txtCPF.setBounds(188, 87, 122, 28);
 
