@@ -35,10 +35,10 @@ public class ListarRastrear extends javax.swing.JFrame {
             DefaultTableModel tblModelo = (DefaultTableModel) tblListar.getModel();
             while (produtos.next()){
                 String linha[] = {
+                    produtos.getString("id_rastreio"),
                     produtos.getString("id_pedido"),
-                    produtos.getString("quantidade"),
-                    produtos.getString("id_produto"),
-                    produtos.getString("cpf_cliente")
+                    produtos.getString("local"),
+                    produtos.getString("status")
                 };
                 tblModelo.addRow(linha);
             }
@@ -63,16 +63,17 @@ public class ListarRastrear extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        tblListar.setBackground(new java.awt.Color(174, 209, 0));
         tblListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id_pedido", "quantidade", "id_produto", "cpf_cliente"
+                "Id_rastreio", "id_pedido", "local", "status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -82,9 +83,9 @@ public class ListarRastrear extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListar);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 740, 430);
+        jScrollPane1.setBounds(0, 0, 860, 590);
 
-        setSize(new java.awt.Dimension(750, 434));
+        setSize(new java.awt.Dimension(876, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

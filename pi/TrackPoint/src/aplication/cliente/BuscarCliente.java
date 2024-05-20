@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
 /**
  *
  * @author lucas
@@ -31,59 +33,84 @@ public class BuscarCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListar = new javax.swing.JTable();
         txtCPF = new javax.swing.JTextField();
+        btnEnter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar produtos");
         getContentPane().setLayout(null);
 
-        txtCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFActionPerformed(evt);
+        tblListar.setBackground(new java.awt.Color(174, 209, 0));
+        tblListar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CPF", "Nome", "CEP"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
+        jScrollPane1.setViewportView(tblListar);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(0, 70, 860, 590);
+
+        txtCPF.setBackground(new java.awt.Color(0, 36, 20));
         getContentPane().add(txtCPF);
-        txtCPF.setBounds(200, 60, 64, 22);
+        txtCPF.setBounds(310, 20, 90, 30);
 
-        jLabel1.setText("CPF");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(160, 60, 37, 16);
-
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnEnter.setBackground(new java.awt.Color(0, 36, 20));
+        btnEnter.setText("Buscar");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnEnterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(180, 110, 100, 40);
+        getContentPane().add(btnEnter);
+        btnEnter.setBounds(410, 20, 100, 30);
 
-        setSize(new java.awt.Dimension(443, 278));
+        jLabel1.setBackground(new java.awt.Color(0, 36, 20));
+        jLabel1.setForeground(new java.awt.Color(0, 36, 20));
+        jLabel1.setText("CPF do cliente");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(230, 30, 100, 16);
+
+        setSize(new java.awt.Dimension(876, 456));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String CPF;
-        CPF = txtCPF.getText();
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        String cpf;
+        cpf = txtCPF.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
-            PreparedStatement st = conectar.prepareStatement("SELECT * FROM cliente WHERE CPF = ?");
-            st.setString(1, CPF);
-            st.executeUpdate(); // executa o comando insert
-            JOptionPane.showMessageDialog(null, "Cliente mostrado com sucesso"); //mostra msg
-            txtCPF.setText(""); // limpa os campos
-            txtCPF.requestFocus(); // deixa o cursor no 1 campo (usuario)
+            PreparedStatement st = conectar.prepareStatement("SELECT * FROM cliente WHERE cpf = ?");
+            st.setString(1, cpf);
+            ResultSet produtos = st.executeQuery();
+            DefaultTableModel tblModelo = (DefaultTableModel) tblListar.getModel();
+            while (produtos.next()){
+                String linha[] = {
+                    produtos.getString("cpf"),
+                    produtos.getString("nome"),
+                    produtos.getString("cep")
+                };
+                tblModelo.addRow(linha);
+            }
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
         }
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,8 +155,10 @@ public class BuscarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblListar;
     private javax.swing.JTextField txtCPF;
     // End of variables declaration//GEN-END:variables
 }

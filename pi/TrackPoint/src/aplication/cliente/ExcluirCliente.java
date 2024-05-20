@@ -35,17 +35,22 @@ public class ExcluirCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtCPF = new javax.swing.JTextField();
         btnExcluir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("excluir");
         getContentPane().setLayout(null);
 
+        jLabel1.setForeground(new java.awt.Color(0, 36, 20));
         jLabel1.setText("CPF");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 60, 30, 16);
-        getContentPane().add(txtCPF);
-        txtCPF.setBounds(190, 60, 64, 22);
+        jLabel1.setBounds(110, 60, 80, 16);
 
+        txtCPF.setBackground(new java.awt.Color(0, 36, 20));
+        getContentPane().add(txtCPF);
+        txtCPF.setBounds(144, 60, 110, 30);
+
+        btnExcluir.setBackground(new java.awt.Color(0, 36, 20));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,7 +58,11 @@ public class ExcluirCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExcluir);
-        btnExcluir.setBounds(190, 130, 65, 22);
+        btnExcluir.setBounds(140, 120, 110, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundoVerde.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 400, 300);
 
         setSize(new java.awt.Dimension(410, 308));
         setLocationRelativeTo(null);
@@ -120,6 +129,7 @@ public class ExcluirCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtCPF;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,23 +39,28 @@ public class AlterarCliente extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alterar produtos");
+        setBackground(new java.awt.Color(174, 209, 0));
         getContentPane().setLayout(null);
 
+        txtCEP.setBackground(new java.awt.Color(0, 36, 20));
         txtCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCEPActionPerformed(evt);
             }
         });
         getContentPane().add(txtCEP);
-        txtCEP.setBounds(160, 140, 70, 22);
+        txtCEP.setBounds(160, 140, 150, 30);
 
+        jLabel2.setForeground(new java.awt.Color(0, 36, 20));
         jLabel2.setText("Nome");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(100, 100, 37, 16);
+        jLabel2.setBounds(100, 100, 60, 16);
 
+        btnAlterar.setBackground(new java.awt.Color(0, 36, 20));
         btnAlterar.setText("Alterar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,32 +68,40 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAlterar);
-        btnAlterar.setBounds(200, 230, 100, 30);
+        btnAlterar.setBounds(160, 200, 100, 30);
 
-        txtCPF.setText("insira o CPF do usuário");
+        txtCPF.setBackground(new java.awt.Color(0, 36, 20));
         txtCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCPFActionPerformed(evt);
             }
         });
         getContentPane().add(txtCPF);
-        txtCPF.setBounds(160, 60, 150, 22);
+        txtCPF.setBounds(160, 60, 150, 30);
 
+        txtNome.setBackground(new java.awt.Color(0, 36, 20));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
             }
         });
         getContentPane().add(txtNome);
-        txtNome.setBounds(160, 100, 70, 22);
+        txtNome.setBounds(160, 100, 150, 30);
 
+        jLabel3.setBackground(new java.awt.Color(0, 36, 20));
+        jLabel3.setForeground(new java.awt.Color(0, 36, 20));
         jLabel3.setText("CEP");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 140, 37, 16);
+        jLabel3.setBounds(100, 140, 60, 16);
 
+        jLabel4.setForeground(new java.awt.Color(0, 36, 20));
         jLabel4.setText("CPF");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(100, 60, 37, 16);
+        jLabel4.setBounds(100, 60, 60, 16);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundoVerde.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 400, 300);
 
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
@@ -174,6 +187,7 @@ public class AlterarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -36,9 +36,9 @@ public class ListarCliente extends javax.swing.JFrame {
             DefaultTableModel tblModelo = (DefaultTableModel) tblListarCliente.getModel();
             while (produtos.next()){
                 String linha[] = {
-                    produtos.getString("CPF"),
-                    produtos.getString("Nome"),
-                    produtos.getString("CEP"),
+                    produtos.getString("cpf"),
+                    produtos.getString("nome"),
+                    produtos.getString("cep"),
                 };
                 tblModelo.addRow(linha);
             }
@@ -64,12 +64,10 @@ public class ListarCliente extends javax.swing.JFrame {
         setTitle("Listar Cliente");
         getContentPane().setLayout(null);
 
+        tblListarCliente.setBackground(new java.awt.Color(174, 209, 0));
         tblListarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "CPF", "Nome", "CEP"

@@ -37,24 +37,29 @@ public class AlterarPedido extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         txtLogradouro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alterar pedido");
+        setBackground(new java.awt.Color(174, 209, 0));
+        setForeground(java.awt.Color.white);
         getContentPane().setLayout(null);
 
-        txtIdPedido.setText("Insira o Id a ser alterado");
+        txtIdPedido.setBackground(new java.awt.Color(0, 36, 20));
         txtIdPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdPedidoActionPerformed(evt);
             }
         });
         getContentPane().add(txtIdPedido);
-        txtIdPedido.setBounds(220, 70, 140, 22);
+        txtIdPedido.setBounds(220, 70, 140, 30);
 
+        jLabel2.setForeground(new java.awt.Color(0, 36, 20));
         jLabel2.setText("ID Pedido");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 70, 60, 16);
+        jLabel2.setBounds(140, 70, 90, 16);
 
+        btnAlterar.setBackground(new java.awt.Color(0, 36, 20));
         btnAlterar.setText("Alterar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,17 +69,25 @@ public class AlterarPedido extends javax.swing.JFrame {
         getContentPane().add(btnAlterar);
         btnAlterar.setBounds(210, 230, 110, 40);
 
+        txtLogradouro.setBackground(new java.awt.Color(0, 36, 20));
         txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLogradouroActionPerformed(evt);
             }
         });
         getContentPane().add(txtLogradouro);
-        txtLogradouro.setBounds(220, 120, 70, 22);
+        txtLogradouro.setBounds(220, 120, 140, 30);
 
+        jLabel3.setForeground(new java.awt.Color(0, 36, 20));
         jLabel3.setText("Logradouro");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(130, 120, 80, 20);
+
+        jLabel1.setBackground(new java.awt.Color(174, 209, 0));
+        jLabel1.setForeground(new java.awt.Color(174, 209, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundoVerde.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 370);
 
         setSize(new java.awt.Dimension(505, 371));
         setLocationRelativeTo(null);
@@ -160,6 +173,7 @@ public class AlterarPedido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtIdPedido;

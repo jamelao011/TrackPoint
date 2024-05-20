@@ -9,6 +9,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+
 /**
  *
  * @author lucas
@@ -31,59 +34,85 @@ public class BuscarRastrear extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtIdRastreio = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListar = new javax.swing.JTable();
+        txtIdPedido = new javax.swing.JTextField();
+        btnEnter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar produtos");
         getContentPane().setLayout(null);
 
-        txtIdRastreio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdRastreioActionPerformed(evt);
+        tblListar.setBackground(new java.awt.Color(174, 209, 0));
+        tblListar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id_rastreio", "id_pedido", "local", "status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        getContentPane().add(txtIdRastreio);
-        txtIdRastreio.setBounds(200, 100, 64, 22);
+        jScrollPane1.setViewportView(tblListar);
 
-        jLabel1.setText("Id Rastreio");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(0, 70, 860, 590);
+
+        txtIdPedido.setBackground(new java.awt.Color(0, 36, 20));
+        getContentPane().add(txtIdPedido);
+        txtIdPedido.setBounds(310, 20, 90, 30);
+
+        btnEnter.setBackground(new java.awt.Color(0, 36, 20));
+        btnEnter.setText("Buscar");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEnter);
+        btnEnter.setBounds(410, 20, 100, 30);
+
+        jLabel1.setBackground(new java.awt.Color(0, 36, 20));
+        jLabel1.setForeground(new java.awt.Color(0, 36, 20));
+        jLabel1.setText("Id De Rastreio");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 100, 70, 16);
+        jLabel1.setBounds(230, 30, 110, 16);
 
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(180, 150, 100, 40);
-
-        setSize(new java.awt.Dimension(364, 307));
+        setSize(new java.awt.Dimension(852, 444));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdRastreioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdRastreioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdRastreioActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         String id;
-        id = txtIdRastreio.getText();
+        id = txtIdPedido.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
-            PreparedStatement st = conectar.prepareStatement("SELECT * FROM rastrear WHERE id_rastreio = ?");
+            PreparedStatement st = conectar.prepareStatement("SELECT * FROM rastrear WHERE id_rastreio=?");
             st.setString(1, id);
-            st.executeUpdate(); // executa o comando insert
-            JOptionPane.showMessageDialog(null, "Pedido Rastreado"); //mostra msg
-            txtIdRastreio.setText(""); // limpa os campos
-            txtIdRastreio.requestFocus(); // deixa o cursor no 1 campo (usuario)
+            ResultSet produtos = st.executeQuery();
+            DefaultTableModel tblModelo = (DefaultTableModel) tblListar.getModel();
+            while (produtos.next()){
+                String linha[] = {
+                    produtos.getString("id_rastreio"),
+                    produtos.getString("id_pedido"),
+                    produtos.getString("local"),
+                    produtos.getString("status")
+                };
+                tblModelo.addRow(linha);
+            }
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
         }
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,8 +150,10 @@ public class BuscarRastrear extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtIdRastreio;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblListar;
+    private javax.swing.JTextField txtIdPedido;
     // End of variables declaration//GEN-END:variables
 }

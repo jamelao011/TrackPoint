@@ -37,23 +37,29 @@ public class AlterarRastrear extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         txtLocal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        txtStatus = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alterar pedido");
         getContentPane().setLayout(null);
 
+        txtIdRastreio.setBackground(new java.awt.Color(0, 36, 20));
         txtIdRastreio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdRastreioActionPerformed(evt);
             }
         });
         getContentPane().add(txtIdRastreio);
-        txtIdRastreio.setBounds(220, 70, 70, 22);
+        txtIdRastreio.setBounds(220, 70, 130, 30);
 
+        jLabel2.setForeground(new java.awt.Color(0, 36, 20));
         jLabel2.setText("ID Rastreio");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 70, 60, 16);
+        jLabel2.setBounds(140, 70, 90, 16);
 
+        btnAlterar.setBackground(new java.awt.Color(0, 36, 20));
         btnAlterar.setText("Alterar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,19 +67,39 @@ public class AlterarRastrear extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAlterar);
-        btnAlterar.setBounds(210, 230, 110, 40);
+        btnAlterar.setBounds(240, 230, 110, 40);
 
+        txtLocal.setBackground(new java.awt.Color(0, 36, 20));
         txtLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocalActionPerformed(evt);
             }
         });
         getContentPane().add(txtLocal);
-        txtLocal.setBounds(220, 120, 70, 22);
+        txtLocal.setBounds(220, 120, 130, 30);
 
+        jLabel3.setForeground(new java.awt.Color(0, 36, 20));
         jLabel3.setText("local");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 120, 60, 16);
+        jLabel3.setBounds(160, 130, 60, 16);
+
+        txtStatus.setBackground(new java.awt.Color(0, 36, 20));
+        txtStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStatusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtStatus);
+        txtStatus.setBounds(220, 170, 130, 30);
+
+        jLabel4.setForeground(new java.awt.Color(0, 36, 20));
+        jLabel4.setText("Status");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(160, 180, 60, 16);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundoVerde.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 370);
 
         setSize(new java.awt.Dimension(505, 371));
         setLocationRelativeTo(null);
@@ -84,19 +110,22 @@ public class AlterarRastrear extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdRastreioActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        String id, local;
+        String id, local, status;
         id = txtIdRastreio.getText();
         local = txtLocal.getText();
+        status = txtStatus.getText();
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
-            PreparedStatement st = conectar.prepareStatement("UPDATE rastrear SET local = ? WHERE id_rastreio = ?");
+            PreparedStatement st = conectar.prepareStatement("UPDATE rastrear SET local = ?, status = ? WHERE id_rastreio = ?");
             st.setString(1, local);
-            st.setString(2, id);
+            st.setString(2, status);
+            st.setString(3, id);
             st.executeUpdate(); // executa o comando insert
             JOptionPane.showMessageDialog(null, "Rastreio alterado com sucesso"); //mostra msg
-            txtIdRastreio.setText(""); // limpa os campos
+            txtIdRastreio.setText("");
+            txtStatus.setText("");// limpa os campos
             txtIdRastreio.requestFocus(); // deixa o cursor no 1 campo (usuario)
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
@@ -107,6 +136,10 @@ public class AlterarRastrear extends javax.swing.JFrame {
     private void txtLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLocalActionPerformed
+
+    private void txtStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStatusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,9 +241,12 @@ public class AlterarRastrear extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtIdRastreio;
     private javax.swing.JTextField txtLocal;
+    private javax.swing.JTextField txtStatus;
     // End of variables declaration//GEN-END:variables
 }
