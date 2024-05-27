@@ -17,6 +17,8 @@ import aplication.rastrear.AlterarRastrear;
 import aplication.rastrear.BuscarRastrear;
 import aplication.rastrear.ExcluirRastrear;
 import aplication.rastrear.ListarRastrear;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,10 +32,10 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
     }
-    
+
     public Menu(String cargo) {
         initComponents();
-        if(cargo.equalsIgnoreCase("Cliente")){
+        if (cargo.equalsIgnoreCase("Cliente")) {
             mnuPedidos.setVisible(false);
             mnuClientes.setVisible(false);
             mnuRastrear.setVisible(false);
@@ -236,7 +238,26 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmCadastrarClienteActionPerformed
 
     private void itmAlterarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarClienteActionPerformed
-        new AlterarCliente().setVisible(true);
+        String CPF;
+        CPF = JOptionPane.showInputDialog("Insira o CPF do cliente a ser alterado");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
+            PreparedStatement st = conectar.prepareStatement("SELECT * FROM cliente WHERE cpf = ?");
+            st.setString(1, CPF);
+            ResultSet cliente = st.executeQuery();
+            if (cliente.next()) {
+                String cpf, nome, CEP;
+                cpf = cliente.getString("CPF");
+                nome = cliente.getString("Nome");
+                CEP = cliente.getString("CEP");
+                new AlterarCliente(cpf, nome, CEP).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
+        }
     }//GEN-LAST:event_itmAlterarClienteActionPerformed
 
     private void itmBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarClienteActionPerformed
@@ -252,7 +273,25 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmListarClienteActionPerformed
 
     private void itmAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarPedidoActionPerformed
-       new AlterarPedido().setVisible(true);
+        String idPedido;
+        idPedido = JOptionPane.showInputDialog("Insira o ID do pedido a ser alterado");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
+            PreparedStatement st = conectar.prepareStatement("SELECT * FROM pedido WHERE id_pedido = ?");
+            st.setString(1, idPedido);
+            ResultSet pedido = st.executeQuery();
+            if (pedido.next()) {
+                String idPed, logradouro;
+                idPed = pedido.getString("id_pedido");
+                logradouro = pedido.getString("logradouro");
+                new AlterarPedido(idPed, logradouro).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Pedido não encontrado");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
+        }
     }//GEN-LAST:event_itmAlterarPedidoActionPerformed
 
     private void itmBuscarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarPedidoActionPerformed
@@ -268,7 +307,26 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmListarPedidoActionPerformed
 
     private void itmAlterarRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAlterarRastrearActionPerformed
-        new AlterarRastrear().setVisible(true);
+        String idRastreio;
+        idRastreio = JOptionPane.showInputDialog("Insira o Id do rastreio a ser alterado");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/trackpoint", "root", "");
+            PreparedStatement st = conectar.prepareStatement("SELECT * FROM rastrear WHERE id_rastreio = ?");
+            st.setString(1, idRastreio);
+            ResultSet rastreio = st.executeQuery();
+            if (rastreio.next()) {
+                String idRas, local, status;
+                idRas = rastreio.getString("id_rastreio");
+                local = rastreio.getString("local");
+                status = rastreio.getString("status");
+                new AlterarRastrear(idRas, local, status).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Rastreio não encontrado");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());
+        }
     }//GEN-LAST:event_itmAlterarRastrearActionPerformed
 
     private void itmBuscarRastrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmBuscarRastrearActionPerformed

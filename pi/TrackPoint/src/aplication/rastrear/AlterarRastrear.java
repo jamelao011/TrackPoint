@@ -23,6 +23,12 @@ public class AlterarRastrear extends javax.swing.JFrame {
         initComponents();
     }
 
+    public AlterarRastrear(String idRas, String local, String status) {
+        initComponents();
+        txtIdRastreio.setText(idRas);
+        txtLocal.setText(local);
+        txtStatus.setText(status);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,6 +135,7 @@ public class AlterarRastrear extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Rastreio alterado com sucesso"); //mostra msg
             txtIdRastreio.setText("");
             txtStatus.setText("");// limpa os campos
+            txtLocal.setText("");
             txtIdRastreio.requestFocus(); // deixa o cursor no 1 campo (usuario)
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Entre em contato com o suporte erro: " + ex.getMessage());

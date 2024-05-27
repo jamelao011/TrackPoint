@@ -4,10 +4,7 @@
  */
 package aplication.cliente;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +18,13 @@ public class AlterarCliente extends javax.swing.JFrame {
      */
     public AlterarCliente() {
         initComponents();
+    }
+
+    public AlterarCliente(String cpf, String nome, String CEP) {
+        initComponents();
+        txtCPF.setText(cpf);
+        txtNome.setText(nome);
+        txtCEP.setText(CEP);
     }
 
     /**

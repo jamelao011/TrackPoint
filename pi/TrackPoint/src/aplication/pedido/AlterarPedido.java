@@ -22,6 +22,12 @@ public class AlterarPedido extends javax.swing.JFrame {
     public AlterarPedido() {
         initComponents();
     }
+    
+    public AlterarPedido(String idPed, String logradouro) {
+        initComponents();
+        txtIdPedido.setText(idPed);
+        txtLogradouro.setText(logradouro);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
